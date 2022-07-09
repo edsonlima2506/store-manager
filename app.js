@@ -23,7 +23,6 @@ ProductController.store);
 
 app.put('/products/:id',
 productsMid.nameValidate,
-productsMid.quantityValidate,
 ProductController.update);
 
 app.delete('/products/:id', ProductController.deleteProd);

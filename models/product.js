@@ -29,13 +29,12 @@ const checkIfNameExist = async (name) => {
 
 const updateProduct = async (id, product) => {
     await connection.execute(
-    'UPDATE products SET name = ?, quantity = ? WHERE id = ?',
-    [product.name, product.quantity, id],
+    'UPDATE products SET name = ? WHERE id = ?',
+    [product.name, id],
     );
     return {
         id,
         name: product.name,
-        quantity: product.quantity,
     };
 };
 

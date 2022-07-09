@@ -28,7 +28,7 @@ const store = async (req, res) => {
 };
 
 const update = async (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
   const product = await productService.getProductById(parseInt(id, 10));
   if (!product) {
     return res.status(404).json({ message: 'Product not found' });
