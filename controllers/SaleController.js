@@ -1,5 +1,4 @@
 const saleService = require('../services/sales');
-const connection = require('../models/connection');
 
 const getAll = async (req, res) => {
     try {
