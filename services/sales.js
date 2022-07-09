@@ -10,17 +10,17 @@ const getById = async (id) => {
     return sale;
 };
 
-const saleStore = async (sales) => {
-    const idSales = await saleModel.storeSale();
-    sales.forEach(async (sale) => {
-      await saleModel.storeSaleProduct(idSales, sale);
-    });
-    return {
-      id: idSales,
-      itemsSold: sales,
-      productId: sales.productId,
-    };
-};
+// const saleStore = async (sales) => {
+//     const idSales = await saleModel.storeSale();
+//     sales.forEach(async (sale) => {
+//       await saleModel.storeSaleProduct(idSales, sale);
+//     });
+//     return {
+//       id: idSales,
+//       itemsSold: sales,
+//       productId: sales.productId,
+//     };
+// };
 
 async function update(id, sales) {
     sales.forEach(async (sale) => {
@@ -40,7 +40,7 @@ const deleteSale = async (id) => {
 module.exports = {
     getAll,
     getById,
-    saleStore,
+    // saleStore,
     update,
     deleteSale,
   };

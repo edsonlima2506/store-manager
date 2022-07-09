@@ -22,16 +22,16 @@ const getById = async ({ params: { id } }, res) => {
     }
 };
 
-async function store(req, res) {
-    const sales = await saleService.saleStore(req.body);
-    const id = sales.itemsSold[0].productId;
-    const product = await connection.execute('SELECT * FROM products WHERE id = ?', [id]);
-    if (sales.itemsSold[0].quantity > product[0][0].quantity) {
-        res.status(422).json({ message: 'Such amount is not permitted to sell' });
-    } else {
-        res.status(201).json(sales);
-    }
-}
+// async function store(req, res) {
+//     const sales = await saleService.saleStore(req.body);
+//     const id = sales.itemsSold[0].productId;
+//     const product = await connection.execute('SELECT * FROM products WHERE id = ?', [id]);
+//     if (sales.itemsSold[0].quantity > product[0][0].quantity) {
+//         res.status(422).json({ message: 'Such amount is not permitted to sell' });
+//     } else {
+//         res.status(201).json(sales);
+//     }
+// }
 
 async function update(req, res) {
     const { id } = req.params;
@@ -52,7 +52,7 @@ async function deleteSale(req, res) {
 module.exports = {
     getAll,
     getById,
-    store,
+    // store,
     update,
     deleteSale,
 };

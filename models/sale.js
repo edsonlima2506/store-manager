@@ -19,12 +19,12 @@ const getSaleById = async (id) => {
     return sale;
 };
 
-async function storeSale() {
-  const [sales] = await connection.execute(
-      'INSERT INTO sales SET date = ?', [new Date()],
-  );
-  return sales.insertId;
-}
+// async function storeSale() {
+//   const [sales] = await connection.execute(
+//       'INSERT INTO sales SET date = ?', [new Date()],
+//   );
+//   return sales.insertId;
+// }
 async function storeSaleProduct(idSales, sale) {
   await connection.execute(
       'INSERT INTO sales_products SET sale_id = ?, product_id = ?, quantity = ?',
@@ -54,7 +54,7 @@ const deleteSale = async (id) => {
 module.exports = {
     getAllSales,
     getSaleById,
-    storeSale,
+    // storeSale,
     storeSaleProduct,
     update,
     deleteSale,

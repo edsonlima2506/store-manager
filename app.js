@@ -32,10 +32,10 @@ app.delete('/sales/:id', SaleController.deleteSale);
 app.get('/sales', SaleController.getAll);
 app.get('/sales/:id', SaleController.getById);
 
-app.post('/sales',
-salesMid.idValidate,
-salesMid.quantityValidate,
-SaleController.store);
+// app.post('/sales',
+// salesMid.idValidate,
+// salesMid.quantityValidate,
+// SaleController.store);
 
 app.put('/sales/:id',
 salesMid.idValidate,
